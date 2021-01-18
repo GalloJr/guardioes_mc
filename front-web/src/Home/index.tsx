@@ -2,6 +2,7 @@ import './styles.css';
 import { ReactComponent as MainImage } from './main.svg';
 import { ReactComponent as MembersImage } from './members.svg';
 import Footer from '../Footer';
+import { Link } from 'react-router-dom';
 
 function Home() {
     return (
@@ -30,9 +31,9 @@ function Home() {
                     </div>
                     <div className="home-image">
                         <MainImage />
-                        <a href="members" className="home-btn-member">
+                        <Link to="/members" className="home-btn-member">
                             INTEGRANTES
-                    </a>
+                    </Link>
                     </div>
                 </div>
             </div>
