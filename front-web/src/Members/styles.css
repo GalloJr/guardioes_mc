@@ -47,7 +47,7 @@
     text-align: center;
   }
   
-  .member-card-container.selected .order-card-title {
+  .member-card-container.selected .member-card-title {
     color: #008E5B;
   }
   
@@ -58,16 +58,16 @@
     width: 100%;
   }
   
-  .member-card-price {
+  .member-card-rank {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 33px;
     letter-spacing: -0.015em;
     color: var(--primary-color);
     text-align: left;
   }
   
-  .member-card-container.selected .member-card-price {
+  .member-card-container.selected .member-card-rank {
     color: #008E5B;
   }
   
@@ -184,7 +184,7 @@
     display: block;
   }
   
-  .member-summary-price {
+  .member-summary-rank {
     font-weight: bold;
     font-size: 18px;
     line-height: 19px;
