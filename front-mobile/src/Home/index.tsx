@@ -11,6 +11,7 @@ export default function Home() {
     const handleOnPress = () => {
         navigation.navigate('Visitors');
     }
+    
     return (
         <>
             <Header />
