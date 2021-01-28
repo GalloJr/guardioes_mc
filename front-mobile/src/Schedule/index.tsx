@@ -2,22 +2,22 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import HeaderOff from '../HeaderOff';
+import Header from '../Header';
 
-export default function Home() {
+export default function Schedule() {
 
     const navigation = useNavigation();
 
     const handleOnPress = () => {
-        navigation.navigate('Visitors');
+        navigation.navigate('Menu');
     }
     
     return (
         <>
-            <HeaderOff />
+            <Header />
             <TouchableWithoutFeedback onPress={handleOnPress}>
             <View style={styles.container}>
-                <Image source={require('../assets/logo.png')}/>
+                <Image source={require('../assets/ucl.png')}/>
             </View>
             </TouchableWithoutFeedback>
         </>

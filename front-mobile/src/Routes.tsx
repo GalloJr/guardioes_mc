@@ -5,6 +5,10 @@ import Home from "./Home";
 import Members from "./Members";
 import Visitors from './Visitors';
 import MemberDetails from './MemberDetails';
+import Menu from './Menu';
+import Schedule from './Schedule';
+import MembersMenu from './MembersMenu';
+import Directors from './Directors';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +25,11 @@ function Routes() {
                 <Stack.Screen name="Home" component={Home}></Stack.Screen>
                 <Stack.Screen name="Visitors" component={Visitors}></Stack.Screen>
                 <Stack.Screen name="Members"component={Members}></Stack.Screen>
+                <Stack.Screen name="Directors"component={Directors}></Stack.Screen>
                 <Stack.Screen name="MemberDetails"component={MemberDetails}></Stack.Screen>
+                <Stack.Screen name="Menu"component={Menu}></Stack.Screen>
+                <Stack.Screen name="MembersMenu"component={MembersMenu}></Stack.Screen>
+                <Stack.Screen name="Schedule"component={Schedule}></Stack.Screen>
             </Stack.Navigator>
         </NavigationContainer>
     )

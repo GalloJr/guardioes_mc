@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Alert, Image, StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
-import { fetchMembers, setAllright, setDelayed } from '../api';
+import { setAllright, setDelayed } from '../api';
 import Header from '../Header';
 import { Member } from '../types';
 
@@ -47,7 +47,9 @@ export default function MemberDetails({ route }: Props) {
     return (
         <>
             <Header />
-            <Text>{member.imageUri}</Text>
+            <Image 
+                source={{uri: member.imageUri}}
+                style={styles.memberImage} />
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.memberName}>{member.name}</Text>
@@ -56,6 +58,7 @@ export default function MemberDetails({ route }: Props) {
                 <Text style={styles.text}>Membro desde {member.since}</Text>
                 <Text style={styles.text}>Padrinho {member.sponsor}</Text>
                 <Text style={styles.text}>Moto {member.motorcycle}</Text>
+                <Text style={styles.text}>Financeiro {member.status}</Text>
             </View>
             <RectButton style={styles.button} onPress={handleSetAllright}>
                 <Text style={styles.buttonText}>FINANCEIRO EM DIA</Text>
@@ -91,6 +94,8 @@ const styles = StyleSheet.create(
             flexDirection: 'row',
             borderRadius: 10,
             marginTop: 40,
+            marginLeft: '10%',
+            marginRight: '10%',
             alignItems: 'center',
             justifyContent: 'center'
         },
@@ -133,6 +138,13 @@ const styles = StyleSheet.create(
             letterSpacing: -0.24,
             color: '#FF0000',
             fontFamily: 'OpenSans_700Bold'
+        },
+        memberImage: {
+            width: 400,
+            height: 400,
+            borderRadius: 50,
+            marginTop: 15,
+            marginLeft: '10%'
         }
     }
 );

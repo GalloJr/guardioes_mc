@@ -3,11 +3,11 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-export default function Header() {
+export default function HeaderOff() {
   const navigation = useNavigation();
 
   const handleOnPress = () => {
-      navigation.navigate('Menu');
+      navigation.navigate('Visitors');
   }
 
   return (
