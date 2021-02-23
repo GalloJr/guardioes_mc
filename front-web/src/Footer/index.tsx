@@ -1,5 +1,5 @@
 import './styles.css';
-import { ReactComponent as YouTubeIcon } from './youtube.svg';
+import { ReactComponent as GitHubIcon } from './github.svg';
 import { ReactComponent as LinkedinIcon } from './linkedin.svg';
 import { ReactComponent as InstagramIcon } from './instagram.svg';
 
@@ -8,8 +8,8 @@ function Footer() {
         <footer className="main-footer">
             App desenvolvido por Gallo Jr. para o Guardiões M.C.
             <div className="footer-icons">
-                <a href="http://www.youtube.com" target="_new">
-                    <YouTubeIcon />
+                <a href="https://github.com/GalloJr" target="_new">
+                    <GitHubIcon />
                 </a>
                 <a href="https://www.linkedin.com/in/renatobgjunior/" target="_new">
                     <LinkedinIcon />

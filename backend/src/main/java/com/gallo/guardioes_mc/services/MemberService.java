@@ -37,6 +37,12 @@ public class MemberService {
 	}
 	
 	@Transactional(readOnly = true)
+	public List<MemberDTO> findMembersNomad() {
+		List<Member> list = repository.findMembersNomad();
+		return list.stream().map(x -> new MemberDTO(x)).collect(Collectors.toList());
+	}
+	
+	@Transactional(readOnly = true)
 	public List<MemberDTO> findMembersMemorian() {
 		List<Member> list = repository.findMembersMemorian();
 		return list.stream().map(x -> new MemberDTO(x)).collect(Collectors.toList());

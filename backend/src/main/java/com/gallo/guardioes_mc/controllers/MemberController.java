@@ -42,6 +42,12 @@ public class MemberController {
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@GetMapping("/nomad")
+	public ResponseEntity<List<MemberDTO>> findMembersNomad(){
+		List<MemberDTO> list = service.findMembersNomad();
+		return ResponseEntity.ok().body(list);
+	}
+	
 	@GetMapping("/memorian")
 	public ResponseEntity<List<MemberDTO>> findMembersMemorian(){
 		List<MemberDTO> list = service.findMembersMemorian();
