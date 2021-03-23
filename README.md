@@ -12,7 +12,6 @@
  <a href="#conteúdo-do-trabalho">Conteúdo do Trabalho</a> • 
  <a href="#fundamentação-técnica">Fundamentação Técnica</a> • 
  <a href="#rotas">Rotas</a> • 
- <a href="#🛠-tecnologias">Tecnologias</a>
 </p>
 
 # Introdução 
