@@ -30,7 +30,7 @@
 *	Aba de noticias: Visualização do resumo de atividades registradas na agenda.
 *	Gerenciamento de integrantes: (Insert/Update/Delete - Diretoria; Read - All) visualização de informações gerais do integrante.
 
-# Conteúdo do Trabalho
+# Conteudo do Trabalho
 
  O presente trabalho está estruturado em seis Capítulos, cujo conteúdo é sucintamente apresentado a seguir:
  No Capítulo 2 é feita a fundamentação das tecnologias...
@@ -38,7 +38,7 @@
  No Capítulo 4 são apresentados os resultados ...
  O Capítulo 5 apresenta as considerações finais  deste trabalho a partir da análise dos resultados obtidos...
 
-# Fundamentação Técnica
+# Fundamentacao Tecnica
 
  A linguagem de programação utilizada para desenvolver o back-end da aplicação foi o JAVA, através do Spring Framework. E para o front-end foi utilizada a linguagem de programação Javascript através da biblioteca React.
  O banco de dados de dados utilizado foi o PostgreSQL.
