@@ -19,7 +19,6 @@ public class MemberDTO implements Serializable{
 	private FinancialStatus status;
 	
 	public MemberDTO() {
-		
 	}
 
 	public MemberDTO(Long id, String name, Integer since, String motorcycle, String rank, String sponsor,

@@ -2,16 +2,21 @@ package com.gallo.guardioes_mc.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_event")
-public class Event implements Serializable{
+public class Event implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -21,16 +26,22 @@ public class Event implements Serializable{
 	private Instant moment;
 	private String description;
 	private String address;
-	
+	private EventStatus status;
+
+	@ManyToMany
+	@JoinTable(name = "tb_event_member", joinColumns = @JoinColumn(name = "event_id"), inverseJoinColumns = @JoinColumn(name = "member_id"))
+	private Set<Member> members = new HashSet<>();
+
 	public Event() {
 	}
 
-	public Event(Long id, Instant moment, String description, String address) {
+	public Event(Long id, Instant moment, String description, String address, EventStatus status) {
 		super();
 		this.id = id;
 		this.moment = moment;
 		this.description = description;
 		this.address = address;
+		this.status = status;
 	}
 
 	public Long getId() {
@@ -64,6 +75,18 @@ public class Event implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+	public EventStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(EventStatus status) {
+		this.status = status;
+	}
+	
+	public Set<Member> getMembers() {
+		return members;
+	}
 
 	@Override
 	public int hashCode() {
@@ -90,5 +113,4 @@ public class Event implements Serializable{
 		return true;
 	}
 
-	
 }
