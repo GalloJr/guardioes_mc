@@ -45,7 +45,7 @@ public class EventService {
 	public EventDTO criarEvento(EventDTO dto) {
 		Event event = new Event(null, dto.getMoment(), dto.getDescription(), dto.getAddress(), EventStatus.PENDING);
 		for (MemberDTO m : dto.getMembers()) {
-			Member member = memberRepository.buscaMemberPorNome(m.getName());
+			Member member = memberRepository.findMembersByName(m.getName());
 			if(member == null) {
 				member = new Member(null, m.getName(), m.getSince(), m.getMotorcycle(), m.getRank(), m.getSponsor(), m.getImageUri(), m.getStatus());
 				member = memberRepository.save(member);
