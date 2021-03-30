@@ -23,4 +23,10 @@ public interface MemberRepository extends JpaRepository<Member, Long>{
 	@Query("SELECT DISTINCT obj FROM Member obj WHERE obj.rank Like 'Nomade'")
 	List<Member> findMembersNomad();
 	
+	@Query("select m from members m where m.nome = ?1 or m.motorcycle = ?2")
+    List<Member> buscaUsuarioPorNomeOuMoto(String name, String motorcycle);
+	
+	@Query("select m from Member m where m.name = ?1")
+    public Member buscaMemberPorNome(String name);
+	
 }

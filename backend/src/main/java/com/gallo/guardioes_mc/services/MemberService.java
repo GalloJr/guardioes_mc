@@ -71,4 +71,20 @@ public class MemberService {
 		return new MemberDTO(member);
 	}
 	
+	@Transactional
+	public MemberDTO setNomad(Long id) {
+		Member member = repository.getOne(id);
+		member.setRank("Nomade");
+		member = repository.save(member);
+		return new MemberDTO(member);
+	}
+	
+	@Transactional
+	public MemberDTO setMemorian(Long id) {
+		Member member = repository.getOne(id);
+		member.setRank("In Memorian");
+		member = repository.save(member);
+		return new MemberDTO(member);
+	}
+	
 }

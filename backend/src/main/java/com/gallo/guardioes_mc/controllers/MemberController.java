@@ -73,4 +73,16 @@ public class MemberController {
 		return ResponseEntity.ok().body(dto);
 	}
 	
+	@PutMapping("/{id}/nomad")
+	public ResponseEntity<MemberDTO> setNomad(@PathVariable Long id) {
+		MemberDTO dto = service.setNomad(id);
+		return ResponseEntity.ok().body(dto);
+	}
+	
+	@PutMapping("/{id}/memorian")
+	public ResponseEntity<MemberDTO> setMemorian(@PathVariable Long id) {
+		MemberDTO dto = service.setMemorian(id);
+		return ResponseEntity.ok().body(dto);
+	}
+	
 }

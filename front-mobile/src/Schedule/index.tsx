@@ -1,27 +1,52 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { StyleSheet, View, Text, Image } from 'react-native';
+import { CalendarList } from 'react-native-calendars';
 import Header from '../Header';
 
 export default function Schedule() {
 
-    const navigation = useNavigation();
-
-    const handleOnPress = () => {
-        navigation.navigate('Menu');
-    }
-    
     return (
         <>
             <Header />
-            <TouchableWithoutFeedback onPress={handleOnPress}>
-            <View style={styles.container}>
-                <Image source={require('../assets/ucl.png')}/>
+            <View>
+                <CalendarList
+                    // https://www.youtube.com/watch?v=xqlBg2VuzDw
+                    // https://github.com/wix/react-native-calendars#calendar
+                    // Enable horizontal scrolling, default = false
+                    horizontal={true}
+                    // Enable paging on horizontal, default = false
+                    pagingEnabled={true}
+                    // Set custom calendarWidth.
+                    calendarWidth={320}
+                    // Handler which gets executed on day press. Default = undefined
+                    onDayPress={(day) => { console.log('selected day', day) }}
+                    // Collection of dates that have to be marked. Default = {}
+                    markedDates={{
+                        '2021-03-19': { selected: true, marked: true, selectedColor: 'blue' },
+                        '2021-03-16': { marked: true },
+                        '2021-03-18': { marked: true, dotColor: 'red', activeOpacity: 0 },
+                        '2021-03-10': { disabled: true, disableTouchEvent: true }
+                    }}
+                    // Specify style for calendar container element. Default = {}
+                    style={{
+                        borderBottomWidth: 5,
+                        borderColor: 'red',
+                        height: 350
+                    }}
+                />
             </View>
-            </TouchableWithoutFeedback>
+            <View style={styles.container}>
+                <Text style={styles.textFormat}>
+                    {"Data Selecionada:"}
+                </Text>
+                <Text style={styles.textFormat}>
+                    {"xx/xx/xxxx"}
+                </Text>
+            </View>
+            <View style={styles.container}>
+                <Image source={require('../assets/ucl.png')} />
+            </View>
         </>
-
     );
 }
 
@@ -30,6 +55,15 @@ const styles = StyleSheet.create(
         container: {
             marginTop: '23%',
             alignItems: 'center'
+        },
+        textFormat: {
+            fontWeight: 'bold',
+            fontSize: 18,
+            lineHeight: 25,
+            letterSpacing: -0.24,
+            color: '#263238',
+            fontFamily: 'OpenSans_700Bold',
+            textAlign: 'center'
         }
     }
 );
