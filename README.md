@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d0cbfd17-2a33-4cba-9a39-66358f4b633c/deploy-status)](https://app.netlify.com/sites/guardioesmc/deploys)
+
 <h1 align="center">
     <a href="http://guardioesmc.netlify.app/">GUARDIÕES M.C.</a>
 </h1> 
