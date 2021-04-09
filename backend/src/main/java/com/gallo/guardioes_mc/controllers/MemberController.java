@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -44,15 +45,9 @@ public class MemberController {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	@GetMapping("/nomad")
-	public ResponseEntity<List<MemberDTO>> findMembersNomad(){
-		List<MemberDTO> list = service.findMembersNomad();
-		return ResponseEntity.ok().body(list);
-	}
-	
-	@GetMapping("/memorian")
-	public ResponseEntity<List<MemberDTO>> findMembersMemorian(){
-		List<MemberDTO> list = service.findMembersMemorian();
+	@GetMapping("/patent/{rank}")
+	public ResponseEntity<List<MemberDTO>> findMembersRank(@RequestParam(value="rank") String rank){
+		List<MemberDTO> list = service.findMembersRank(rank);
 		return ResponseEntity.ok().body(list);
 	}
 	

@@ -17,11 +17,8 @@ public interface MemberRepository extends JpaRepository<Member, Long>{
 	@Query("SELECT DISTINCT obj FROM Member obj WHERE obj.rank IN ('Presidente', 'Vice Presidente', 'Diretor Eventos', 'Diretor Adjunto Evento', 'Diretor Social', 'Diretor Disciplinar', 'Diretor Tesouraria', 'Diretor Adjunto Tesouraria', 'Diretor Regional Santa Catarina')")
 	List<Member> findMembersDirection();
 	
-	@Query("SELECT DISTINCT obj FROM Member obj WHERE obj.rank Like 'In Memorian'")
-	List<Member> findMembersMemorian();
-	
-	@Query("SELECT DISTINCT obj FROM Member obj WHERE obj.rank Like 'Nomade'")
-	List<Member> findMembersNomad();
+	@Query("SELECT DISTINCT obj FROM Member obj WHERE obj.rank = ?1")
+	List<Member> findMembersRank(String rank);
 	
 	//@Query("select m from members m where m.nome = ?1 or m.motorcycle = ?2")
     //List<Member> buscaUsuarioPorNomeOuMoto(String name, String motorcycle);
