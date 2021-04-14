@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
-import { CalendarList } from 'react-native-calendars';
+import { CalendarList, LocaleConfig } from 'react-native-calendars';
 import Header from '../Header';
 
 export default function Schedule() {
@@ -17,9 +17,9 @@ export default function Schedule() {
                     // Enable paging on horizontal, default = false
                     pagingEnabled={true}
                     // Set custom calendarWidth.
-                    calendarWidth={320}
+                    //calendarWidth={420}
                     // Handler which gets executed on day press. Default = undefined
-                    onDayPress={(day) => { console.log('selected day', day) }}
+                    onDayPress={(day) => { console.log('selected day', day.dateString) }}
                     // Collection of dates that have to be marked. Default = {}
                     markedDates={{
                         '2021-03-19': { selected: true, marked: true, selectedColor: 'blue' },
@@ -31,8 +31,12 @@ export default function Schedule() {
                     style={{
                         borderBottomWidth: 5,
                         borderColor: 'red',
-                        height: 350
+                        height: 400
                     }}
+                    // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
+                    monthFormat={'MMMM yyyy'}
+                    // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
+                    firstDay={1}
                 />
             </View>
             <View style={styles.container}>
@@ -67,3 +71,14 @@ const styles = StyleSheet.create(
         }
     }
 );
+
+LocaleConfig.locales['br'] = {
+    monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+    monthNamesShort: ['Jan.', 'Fev.', 'Mar', 'Abril', 'Mai', 'Jun', 'Jul.', 'Ago', 'Set.', 'Out.', 'Nov.', 'Dez.'],
+    dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+    dayNamesShort: ['Dom.', 'Seg.', 'Ter.', 'Qua.', 'Qui.', 'Sex.', 'Sab.'],
+    today: 'Hoje\'hoje'
+};
+LocaleConfig.defaultLocale = 'br';
+
+
