@@ -12,34 +12,34 @@ export default function MembersMenu() {
     }
 
     const handleOnNomad = () => {
-        navigation.navigate('Schedule');
+        navigation.navigate('Nomads');
     }
 
     const handleOnMemoriam = () => {
-        navigation.navigate('Schedule');
+        navigation.navigate('Memorian');
     }
-    
+
     const handleOnDirectors = () => {
         navigation.navigate('Directors');
     }
 
     return (
         <>
-        <Header />
-        <RectButton style={styles.button} onPress={handleOnDirectors}>
+            <Header />
+            <RectButton style={styles.button} onPress={handleOnDirectors}>
                 <Text style={styles.buttonText}>Diretoria</Text>
-        </RectButton>
-        <RectButton style={styles.button} onPress={handleOnNomad}>
+            </RectButton>
+            <RectButton style={styles.button} onPress={handleOnNomad}>
                 <Text style={styles.buttonText}>Nomades</Text>
-        </RectButton>
-        <RectButton style={styles.button} onPress={handleOnMembers}>
+            </RectButton>
+            <RectButton style={styles.button} onPress={handleOnMembers}>
                 <Text style={styles.buttonText}>Integrantes</Text>
-        </RectButton>
-        <RectButton style={styles.button} onPress={handleOnMemoriam}>
-                <Text style={styles.buttonText}>In Memoriam</Text>
-        </RectButton>
+            </RectButton>
+            <RectButton style={styles.button} onPress={handleOnMemoriam}>
+                <Text style={styles.buttonText}>In Memorian</Text>
+            </RectButton>
         </>
-        
+
     );
 }
 

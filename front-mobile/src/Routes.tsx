@@ -9,6 +9,8 @@ import Menu from './Menu';
 import Schedule from './Schedule';
 import MembersMenu from './MembersMenu';
 import Directors from './Directors';
+import Nomads from './Nomads';
+import Memorian from './Memorian';
 
 const Stack = createStackNavigator();
 
@@ -16,20 +18,22 @@ function Routes() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-            headerMode="none"
-            screenOptions={{
-                cardStyle:{
-                    backgroundColor: '#FFF'
-                }
-            }}>
+                headerMode="none"
+                screenOptions={{
+                    cardStyle: {
+                        backgroundColor: '#FFF'
+                    }
+                }}>
                 <Stack.Screen name="Home" component={Home}></Stack.Screen>
                 <Stack.Screen name="Visitors" component={Visitors}></Stack.Screen>
-                <Stack.Screen name="Members"component={Members}></Stack.Screen>
-                <Stack.Screen name="Directors"component={Directors}></Stack.Screen>
-                <Stack.Screen name="MemberDetails"component={MemberDetails}></Stack.Screen>
-                <Stack.Screen name="Menu"component={Menu}></Stack.Screen>
-                <Stack.Screen name="MembersMenu"component={MembersMenu}></Stack.Screen>
-                <Stack.Screen name="Schedule"component={Schedule}></Stack.Screen>
+                <Stack.Screen name="Members" component={Members}></Stack.Screen>
+                <Stack.Screen name="Nomads" component={Nomads}></Stack.Screen>
+                <Stack.Screen name="Memorian" component={Memorian}></Stack.Screen>
+                <Stack.Screen name="Directors" component={Directors}></Stack.Screen>
+                <Stack.Screen name="MemberDetails" component={MemberDetails}></Stack.Screen>
+                <Stack.Screen name="Menu" component={Menu}></Stack.Screen>
+                <Stack.Screen name="MembersMenu" component={MembersMenu}></Stack.Screen>
+                <Stack.Screen name="Schedule" component={Schedule}></Stack.Screen>
             </Stack.Navigator>
         </NavigationContainer>
     )
