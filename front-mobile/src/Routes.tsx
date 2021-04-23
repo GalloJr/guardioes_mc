@@ -11,6 +11,7 @@ import MembersMenu from './MembersMenu';
 import Directors from './Directors';
 import Nomads from './Nomads';
 import Memorian from './Memorian';
+import Login from './Login';
 
 const Stack = createStackNavigator();
 
@@ -34,6 +35,7 @@ function Routes() {
                 <Stack.Screen name="Menu" component={Menu}></Stack.Screen>
                 <Stack.Screen name="MembersMenu" component={MembersMenu}></Stack.Screen>
                 <Stack.Screen name="Schedule" component={Schedule}></Stack.Screen>
+                <Stack.Screen name="Login" component={Login}></Stack.Screen>
             </Stack.Navigator>
         </NavigationContainer>
     )

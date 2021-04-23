@@ -1,4 +1,4 @@
-export type Member ={
+export type Member = {
     id: 1;
     name: string;
     since: number;

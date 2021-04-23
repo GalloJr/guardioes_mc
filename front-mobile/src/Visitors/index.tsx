@@ -9,7 +9,7 @@ export default function Visitors() {
     const navigation = useNavigation();
 
     const handleOnPress = () => {
-        navigation.navigate('Menu');
+        navigation.navigate('Login');
     }
 
     return (
@@ -33,7 +33,7 @@ export default function Visitors() {
                 </View>
                 <View style={styles.footer}>
                     <RectButton style={styles.button} onPress={handleOnPress}>
-                        <Text style={styles.buttonText}>MEMBROS</Text>
+                        <Text style={styles.buttonText}>Login</Text>
                     </RectButton>
                 </View>
             </ScrollView>

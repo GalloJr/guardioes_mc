@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Alert, Image, StyleSheet, Text, View } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
 import { setAllright, setDelayed } from '../api';
+import { Button } from '../Components/Button';
 import Header from '../Header';
 import { Member } from '../types';
 
@@ -40,15 +40,11 @@ export default function MemberDetails({ route }: Props) {
             })
     }
 
-    const handleOnBack = () => {
-        navigation.navigate('Members');
-    }
-
     return (
         <>
             <Header />
-            <Image 
-                source={{uri: member.imageUri}}
+            <Image
+                source={{ uri: member.imageUri }}
                 style={styles.memberImage} />
             <View style={styles.container}>
                 <View style={styles.header}>
@@ -60,91 +56,77 @@ export default function MemberDetails({ route }: Props) {
                 <Text style={styles.text}>Moto {member.motorcycle}</Text>
                 <Text style={styles.text}>Financeiro {member.status}</Text>
             </View>
-            <RectButton style={styles.button} onPress={handleSetAllright}>
-                <Text style={styles.buttonText}>FINANCEIRO EM DIA</Text>
-            </RectButton>
-            <RectButton style={styles.button} onPress={handleSetDelayed}>
-                <Text style={styles.buttonText}>FINANCEIRO EM ATRASO</Text>
-            </RectButton>
-            <RectButton style={styles.button} onPress={handleOnBack}>
-                <Text style={styles.buttonText}>VOLTAR</Text>
-            </RectButton>
+            <View style={styles.content}>
+                <Button
+                    title="FINANCEIRO EM DIA"
+                    onPress={handleSetAllright}
+                />
+                <View style={styles.content}>
+                    <Button
+                        title="FINANCEIRO EM ATRASO"
+                        onPress={handleSetDelayed}
+                    />
+                </View>
+            </View>
         </>
     );
 }
 
-const styles = StyleSheet.create(
-    {
-        container: {
-            marginTop: '10%',
-            marginLeft: '2%',
-            marginRight: '2%',
-            marginBottom: '2%',
-            padding: 15,
-            backgroundColor: '#FFF',
-            shadowOpacity: 0.25,
-            shadowColor: '#000',
-            shadowOffset: { width: 0, height: 4 },
-            shadowRadius: 20,
-            borderRadius: 10,
-            elevation: 5
-        },
-        button: {
-            backgroundColor: '#FF0000',
-            flexDirection: 'row',
-            borderRadius: 10,
-            marginTop: 40,
-            marginLeft: '10%',
-            marginRight: '10%',
-            alignItems: 'center',
-            justifyContent: 'center'
-        },
-        buttonText: {
-            paddingTop: 15,
-            paddingBottom: 15,
-            paddingLeft: 50,
-            paddingRight: 50,
-            fontWeight: 'bold',
-            fontSize: 18,
-            color: '#FFF',
-            letterSpacing: -0.24,
-            fontFamily: 'OpenSans_700Bold'
-        },
-        header: {
-            flexDirection: 'row',
-            justifyContent: 'space-between'
-        },
-        text: {
-            fontWeight: 'normal',
-            fontSize: 14,
-            lineHeight: 19,
-            letterSpacing: -0.24,
-            color: '#9E9E9E',
-            fontFamily: 'OpenSans_400Regular'
-        },
-        memberName: {
-            fontWeight: 'bold',
-            fontSize: 18,
-            lineHeight: 25,
-            letterSpacing: -0.24,
-            color: '#263238',
-            fontFamily: 'OpenSans_700Bold'
-        },
-        memberRank: {
-            fontWeight: 'bold',
-            fontSize: 18,
-            lineHeight: 25,
-            textAlign: 'right',
-            letterSpacing: -0.24,
-            color: '#FF0000',
-            fontFamily: 'OpenSans_700Bold'
-        },
-        memberImage: {
-            width: 400,
-            height: 400,
-            borderRadius: 50,
-            marginTop: 15,
-            marginLeft: '10%'
-        }
+const styles = StyleSheet.create({
+    content: {
+        flex: 1,
+        marginTop: '10%',
+        width: '100%'
+    },
+    container: {
+        marginTop: '10%',
+        marginLeft: '2%',
+        marginRight: '2%',
+        marginBottom: '2%',
+        padding: 15,
+        backgroundColor: '#FFF',
+        shadowOpacity: 0.25,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowRadius: 20,
+        borderRadius: 10,
+        elevation: 5
+    },
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    text: {
+        fontWeight: 'normal',
+        fontSize: 14,
+        lineHeight: 19,
+        letterSpacing: -0.24,
+        color: '#9E9E9E',
+        fontFamily: 'OpenSans_400Regular'
+    },
+    memberName: {
+        fontWeight: 'bold',
+        fontSize: 18,
+        lineHeight: 25,
+        letterSpacing: -0.24,
+        color: '#263238',
+        fontFamily: 'OpenSans_700Bold'
+    },
+    memberRank: {
+        fontWeight: 'bold',
+        fontSize: 18,
+        lineHeight: 25,
+        textAlign: 'right',
+        letterSpacing: -0.24,
+        color: '#FF0000',
+        fontFamily: 'OpenSans_700Bold'
+    },
+    memberImage: {
+        width: 400,
+        height: 400,
+        borderRadius: 50,
+        marginTop: 15,
+        marginLeft: '10%'
     }
+}
 );

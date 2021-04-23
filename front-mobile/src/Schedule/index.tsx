@@ -1,9 +1,14 @@
-import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
 import { CalendarList, LocaleConfig } from 'react-native-calendars';
 import Header from '../Header';
 
 export default function Schedule() {
+    const [date, setDate] = useState<string>();
+
+    function handleInputChange(value: string) {
+        setDate(value);
+    }
 
     return (
         <>
@@ -19,7 +24,8 @@ export default function Schedule() {
                     // Set custom calendarWidth.
                     //calendarWidth={420}
                     // Handler which gets executed on day press. Default = undefined
-                    onDayPress={(day) => { console.log('selected day', day.dateString) }}
+                    //onDayPress={(day) => { console.log('selected day', day.dateString) }}
+                    onDayPress={(day) => { handleInputChange(day.dateString) }}
                     // Collection of dates that have to be marked. Default = {}
                     markedDates={{
                         '2021-03-19': { selected: true, marked: true, selectedColor: 'blue' },
@@ -44,11 +50,8 @@ export default function Schedule() {
                     {"Data Selecionada:"}
                 </Text>
                 <Text style={styles.textFormat}>
-                    {"xx/xx/xxxx"}
+                    {date}
                 </Text>
-            </View>
-            <View style={styles.container}>
-                <Image source={require('../assets/ucl.png')} />
             </View>
         </>
     );
