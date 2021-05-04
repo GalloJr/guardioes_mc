@@ -1,4 +1,4 @@
-INSERT INTO tb_member (name, since, motorcycle, rank, sponsor, image_Uri, status) VALUES ('André Lorena', 1998, 'Fat Boy', 'Presidente', 'Fundador', 'https://i.ibb.co/NZmkqfr/Andre.jpg', 1);
+INSERT INTO tb_member (name, since, motorcycle, rank, sponsor, image_Uri, status, email, senha) VALUES ('André Lorena', 1998, 'Fat Boy', 'Presidente', 'Fundador', 'https://i.ibb.co/NZmkqfr/Andre.jpg', 1);
 INSERT INTO tb_member (name, since, motorcycle, sponsor, image_Uri, status) VALUES ('Andrezão', 2005, 'Shadow', '?', 'https://i.ibb.co/nwx6FD1/Andrez-o.jpg', 1);
 INSERT INTO tb_member (name, since, motorcycle, sponsor, image_Uri, status) VALUES ('Berto', 2014, 'Dyna', 'André', 'https://i.ibb.co/pzWMGtv/Bertoloti.jpg', 1);
 INSERT INTO tb_member (name, since, motorcycle, sponsor, status) VALUES ('Bia', 2012, 'Fazer 250', 'Gallo', 1);
@@ -12,11 +12,11 @@ INSERT INTO tb_member (name, since, motorcycle, sponsor, status) VALUES ('Faísc
 INSERT INTO tb_member (name, since, motorcycle, sponsor, status) VALUES ('Feio', 2013, 'Midnight', 'Ferreira', 1);
 INSERT INTO tb_member (name, since, sponsor, status) VALUES ('Fernanda', 1999, 'Valério', 1);
 INSERT INTO tb_member (name, since, motorcycle, sponsor, image_Uri, status) VALUES ('Foguinho', 2017, 'Tenere 250', 'Boby', 'https://i.ibb.co/JkxfwFz/Foguinho.jpg', 1);
-INSERT INTO tb_member (name, since, motorcycle, rank, sponsor, image_Uri, status) VALUES ('Gallo', 2008, 'Fat Boy', 'Vice Presidente', 'Mineiro', 'https://i.ibb.co/FYFbgDY/Gallo.jpg', 1);
+INSERT INTO tb_member (name, since, motorcycle, rank, sponsor, image_Uri, status, email, senha) VALUES ('Gallo', 2008, 'Fat Boy', 'Vice Presidente', 'Mineiro', 'https://i.ibb.co/FYFbgDY/Gallo.jpg', 1, 'digallo@uol.com.br', '$2y$10$7jVG6XIUcQM1vdA76TLsBOyO0PZf3fw.MMDcE60hiNpwHyM/J28.W');
 INSERT INTO tb_member (name, since, motorcycle, sponsor, status) VALUES ('Gunji', 1999, 'Deluxe', 'André', 1);
 INSERT INTO tb_member (name, since, sponsor, status) VALUES ('Jane', 2013, 'André', 1);
 INSERT INTO tb_member (name, since, sponsor, status) VALUES ('Cícero', 2013, 'André', 1);
-INSERT INTO tb_member (name, since, motorcycle, sponsor, image_Uri, status) VALUES ('Junior', 2009, 'Tornado 250', 'Gallo', 'https://i.ibb.co/D74ZvSD/Junior.jpg', 1);
+INSERT INTO tb_member (name, since, motorcycle, sponsor, image_Uri, status, email, senha) VALUES ('Junior', 2009, 'Tornado 250', 'Gallo', 'https://i.ibb.co/D74ZvSD/Junior.jpg', 1, 'renatobgjunior@gmail.com', '$2y$10$7jVG6XIUcQM1vdA76TLsBOyO0PZf3fw.MMDcE60hiNpwHyM/J28.W');
 INSERT INTO tb_member (name, since, motorcycle, sponsor, status) VALUES ('Jovilson', 2020, 'Fat Boy', 'André', 1);
 INSERT INTO tb_member (name, since, motorcycle, rank, sponsor, image_Uri, status) VALUES ('Kleber', 2006, 'Drag star', 'Diretor Disciplinar', 'André', 'https://i.ibb.co/YfFqgQZ/Kleber.jpg', 1);
 INSERT INTO tb_member (name, since, motorcycle, sponsor, status) VALUES ('Lana', 2010, 'Fat Boy', 'André', 1);
@@ -36,8 +36,6 @@ INSERT INTO tb_member (name, since, motorcycle, sponsor, status) VALUES ('XIKRET
 INSERT INTO tb_member (name, since, motorcycle, sponsor, image_Uri, status) VALUES ('Wolmer Gigante', 2020, 'Falcon', 'André', 'https://i.ibb.co/0sBsVmy/Wolmer.jpg', 1);
 
 INSERT INTO tb_event (moment, description, address, status) VALUES (TIMESTAMP WITH TIME ZONE '2021-05-19T10:00:00Z', 'Aniversário Junior', 'R. Manoel Bôsco Ribeiro, 46 - Jardim das Industrias, São José dos Campos', 0);
-
-INSERT INTO tb_member (name, since, motorcycle, sponsor, image_Uri, status, email, senha) VALUES ('Junior', 2009, 'Tornado 250', 'Gallo', 'https://i.ibb.co/D74ZvSD/Junior.jpg', 1, 'renatobgjunior@gmail.com', '$2y$10$7jVG6XIUcQM1vdA76TLsBOyO0PZf3fw.MMDcE60hiNpwHyM/J28.W');
 
 INSERT INTO tb_member (name, email, senha) VALUES ('admin', 'admin@admin', '$2y$10$7jVG6XIUcQM1vdA76TLsBOyO0PZf3fw.MMDcE60hiNpwHyM/J28.W');
 
