@@ -26,4 +26,8 @@ public interface MemberRepository extends JpaRepository<Member, Long>{
 	@Query("SELECT m FROM Member m where m.name = ?1")
     public Member findMembersByName(String name);
 	
+	public Member findTop1ByNameOrEmail(String name, String email);
+	
+	public List<Member> findByNameOrEmailContains(String name, String email);
+	
 }

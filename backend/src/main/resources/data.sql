@@ -36,3 +36,11 @@ INSERT INTO tb_member (name, since, motorcycle, sponsor, status) VALUES ('XIKRET
 INSERT INTO tb_member (name, since, motorcycle, sponsor, image_Uri, status) VALUES ('Wolmer Gigante', 2020, 'Falcon', 'André', 'https://i.ibb.co/0sBsVmy/Wolmer.jpg', 1);
 
 INSERT INTO tb_event (moment, description, address, status) VALUES (TIMESTAMP WITH TIME ZONE '2021-05-19T10:00:00Z', 'Aniversário Junior', 'R. Manoel Bôsco Ribeiro, 46 - Jardim das Industrias, São José dos Campos', 0);
+
+INSERT INTO tb_member (name, since, motorcycle, sponsor, image_Uri, status, email, senha) VALUES ('Junior', 2009, 'Tornado 250', 'Gallo', 'https://i.ibb.co/D74ZvSD/Junior.jpg', 1, 'renatobgjunior@gmail.com', '$2y$10$7jVG6XIUcQM1vdA76TLsBOyO0PZf3fw.MMDcE60hiNpwHyM/J28.W');
+
+INSERT INTO tb_member (name, email, senha) VALUES ('admin', 'admin@admin', '$2y$10$7jVG6XIUcQM1vdA76TLsBOyO0PZf3fw.MMDcE60hiNpwHyM/J28.W');
+
+INSERT INTO aut_autorizacao (aut_nome) VALUES ('ROLE_ADMIN');
+
+INSERT INTO uau_usuario_autorizacao VALUES (1, 1);

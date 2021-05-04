@@ -2,6 +2,12 @@ package com.gallo.guardioes_mc.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonView;
+import com.gallo.guardioes_mc.controllers.View;
 import com.gallo.guardioes_mc.entities.FinancialStatus;
 import com.gallo.guardioes_mc.entities.Member;
 
@@ -9,20 +15,49 @@ public class MemberDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
+	@JsonView(View.MemberCompleto.class)
 	private Long id;
+	
+	@JsonView(View.MemberResumo.class)
+	@NotBlank (message = "{name.not.blank}")
 	private String name;
+	
+	@JsonView(View.MemberCompleto.class)
 	private Integer since;
+
+	@JsonView(View.MemberResumo.class)
 	private String motorcycle;
+	
+	@JsonView(View.MemberResumo.class)
 	private String rank;
+	
+	@JsonView(View.MemberCompleto.class)
 	private String sponsor;
+	
+	@JsonView(View.MemberCompleto.class)
 	private String imageUri;
+	
+	@JsonView(View.MemberCompleto.class)
 	private FinancialStatus status;
+
+	@JsonView(View.MemberResumo.class)
+	@NotBlank 
+	@Email 
+	@Size(max= 255) 
+	private String email;
+	
+	private String senha;
+	
+	@JsonView(View.MemberResumo.class)
+	private String autorizacao;
+	
+	private String token;
 	
 	public MemberDTO() {
 	}
 
 	public MemberDTO(Long id, String name, Integer since, String motorcycle, String rank, String sponsor,
-			String imageUri, FinancialStatus status) {
+			String imageUri, FinancialStatus status, String email, String senha) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -32,6 +67,8 @@ public class MemberDTO implements Serializable{
 		this.sponsor = sponsor;
 		this.imageUri = imageUri;
 		this.status = status;
+		this.email = email;
+		this.senha = senha;
 	}
 	
 	public MemberDTO(Member entity) {
@@ -44,6 +81,8 @@ public class MemberDTO implements Serializable{
 		sponsor = entity.getSponsor();
 		imageUri = entity.getImageUri();
 		status = entity.getStatus();
+		email = entity.getEmail();
+		senha = entity.getSenha();
 	}
 
 	public Long getId() {
@@ -110,5 +149,35 @@ public class MemberDTO implements Serializable{
 		this.status = status;
 	}
 	
+	public String getEmail() {
+		return email;
+	}
 	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+	
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
+	public String getAutorizacao() {
+		return autorizacao;
+	}
+	
+	public void setAutorizacao(String autorizacao) {
+		this.autorizacao = autorizacao;
+	}
+	
+	public String getToken() {
+		return token;
+	}
+	
+	public void setToken(String token) {
+		this.token = token;
+	}
 }
