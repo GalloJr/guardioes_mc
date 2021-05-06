@@ -5,6 +5,8 @@ import { Button } from '../Components/Button';
 import HeaderOff from '../HeaderOff';
 import { useNavigation } from '@react-navigation/core';
 
+//https://medium.com/reactbrasil/consumindo-api-rest-com-autentica%C3%A7%C3%A3o-jwt-no-react-native-eec62b852ff3
+
 export default function Login() {
     const [name, setName] = useState<string>();
     const [password, setPassword] = useState<string>();

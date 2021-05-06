@@ -37,7 +37,7 @@ public class MemberServiceImpl implements MemberService{
 	
 	// Lista todos usuarios
 	@Override
-	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+	//@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public List<Member> Listar() {
 		List<Member> members = repository.findAllByOrderBySinceAsc();
 		List<Member> membersret = new LinkedList<Member>();
