@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { CalendarList, LocaleConfig } from 'react-native-calendars';
-import Header from '../Header';
+import EventTable from '../../Components/EventTable';
+import Header from '../../Components/Header';
+import { formatLocalDate } from '../../utils/format';
 
 export default function Schedule() {
     const [date, setDate] = useState<string>();
 
     function handleInputChange(value: string) {
-        setDate(value);
+        setDate(formatLocalDate(value, "dd/MM/yyyy"));
     }
 
     return (
@@ -28,7 +30,7 @@ export default function Schedule() {
                     onDayPress={(day) => { handleInputChange(day.dateString) }}
                     // Collection of dates that have to be marked. Default = {}
                     markedDates={{
-                        '2021-03-19': { selected: true, marked: true, selectedColor: 'blue' },
+                        '2021-03-19': { selected: true, selectedColor: 'blue' },
                         '2021-03-16': { marked: true },
                         '2021-03-18': { marked: true, dotColor: 'red', activeOpacity: 0 },
                         '2021-03-10': { disabled: true, disableTouchEvent: true }
@@ -53,6 +55,7 @@ export default function Schedule() {
                     {date}
                 </Text>
             </View>
+            <View><EventTable /></View>
         </>
     );
 }

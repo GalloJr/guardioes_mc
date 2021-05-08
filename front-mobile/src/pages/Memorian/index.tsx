@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Alert, Text } from 'react-native';
 import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import Header from '../Header';
-import MemberCard from '../MemberCard';
-import { fetchNomad } from '../api';
-import { Member } from '../types';
+import Header from '../../Components/Header';
+import MemberCard from '../../Components/MemberCard';
+import { fetchMemorian } from '../../api';
+import { Member } from '../../types/types';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 
-export default function Nomads() {
+export default function Memorian() {
     const [members, setMembers] = useState<Member[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const navigation = useNavigation();
@@ -15,9 +15,9 @@ export default function Nomads() {
 
     const fetchData = () => {
         setIsLoading(true);
-        fetchNomad()
+        fetchMemorian()
             .then(response => setMembers(response.data))
-            .catch(error => Alert.alert('Houve um erro ao buscar os nomades!'))
+            .catch(error => Alert.alert('Houve um erro ao buscar os integrantes In Memorian!'))
             .finally(() => setIsLoading(false));
     }
 

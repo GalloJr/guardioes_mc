@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Header from '../Header';
+import Header from '../../Components/Header';
 import { useNavigation } from '@react-navigation/native';
-import { Button } from '../Components/Button';
+import { Button } from '../../Components/Button';
 
 export default function Menu() {
     const navigation = useNavigation();

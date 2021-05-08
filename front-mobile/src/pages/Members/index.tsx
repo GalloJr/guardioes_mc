@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Alert, Text } from 'react-native';
 import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import Header from '../Header';
-import MemberCard from '../MemberCard';
-import { fetchMembers } from '../api';
-import { Member } from '../types';
+import Header from '../../Components/Header';
+import MemberCard from '../../Components/MemberCard';
+import { fetchMembers } from '../../api';
+import { Member } from '../../types/types';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 
 export default function Members() {
@@ -12,8 +12,8 @@ export default function Members() {
     const [isLoading, setIsLoading] = useState(false);
     const navigation = useNavigation();
     const isFocused = useIsFocused();
-    
-    const fetchData = () =>{
+
+    const fetchData = () => {
         setIsLoading(true);
         fetchMembers()
             .then(response => setMembers(response.data))
@@ -35,23 +35,23 @@ export default function Members() {
 
     return (
         <>
-        <Header />
-        <ScrollView style={styles.container}>
-            {isLoading ? (
-                <Text> Buscando integrantes...</Text>
-            ) : (
-                members.map(member => (
-                    <TouchableWithoutFeedback 
-                        key={member.id} 
-                        onPress={() => handleOnPress(member)}
-                    >
-                        <MemberCard member={member} />
-                    </TouchableWithoutFeedback>
-                ))
-            )}
-        </ScrollView>
+            <Header />
+            <ScrollView style={styles.container}>
+                {isLoading ? (
+                    <Text> Buscando integrantes...</Text>
+                ) : (
+                    members.map(member => (
+                        <TouchableWithoutFeedback
+                            key={member.id}
+                            onPress={() => handleOnPress(member)}
+                        >
+                            <MemberCard member={member} />
+                        </TouchableWithoutFeedback>
+                    ))
+                )}
+            </ScrollView>
         </>
-        
+
     );
 }
 

@@ -1,5 +1,5 @@
 export type Member = {
-    id: 1;
+    id: number;
     name: string;
     since: number;
     motorcycle: string;
@@ -9,3 +9,11 @@ export type Member = {
     status: number;
 }
 
+export type Event = {
+    id: number;
+    moment: string;
+    description: string;
+    address: string;
+    status: string;
+    members: Member;
+}

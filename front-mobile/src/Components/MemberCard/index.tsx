@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Member } from '../types';
+import { Member } from '../../types/types';
 
 type Props = {
     member: Member;
 }
 
-export default function MemberCard({ member}: Props) {
+export default function MemberCard({ member }: Props) {
     return (
         <>
             <View style={styles.container}>
@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
         shadowRadius: 20,
         borderRadius: 10,
         elevation: 5
-      },
-      memberName: {
+    },
+    memberName: {
         fontWeight: 'bold',
         fontSize: 18,
         lineHeight: 25,
@@ -39,5 +39,5 @@ const styles = StyleSheet.create({
         color: '#263238',
         fontFamily: 'OpenSans_700Bold',
         textAlign: 'center'
-      }
+    }
 });

@@ -1,17 +1,17 @@
 import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from "./Home";
-import Members from "./Members";
-import Visitors from './Visitors';
-import MemberDetails from './MemberDetails';
-import Menu from './Menu';
-import Schedule from './Schedule';
-import MembersMenu from './MembersMenu';
-import Directors from './Directors';
-import Nomads from './Nomads';
-import Memorian from './Memorian';
-import Login from './Login';
+import Home from './pages/Home';
+import Members from './pages/Members';
+import Visitors from './pages/Visitors';
+import MemberDetails from './pages/MemberDetails';
+import Menu from './pages/Menu';
+import Schedule from './pages/Schedule';
+import MembersMenu from './pages/MembersMenu';
+import Directors from './pages/Directors';
+import Nomads from './pages/Nomads';
+import Memorian from './pages/Memorian';
+import Login from './pages/Login';
 
 const Stack = createStackNavigator();
 

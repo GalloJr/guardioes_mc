@@ -6,6 +6,15 @@ export function fetchMembers() {
     return axios(`${API_URL}/members`);
 }
 
+export function fetchEvents() {
+    return axios(`${API_URL}/events`);
+}
+
+//criar essa rota no backend
+export function fetchEventsByDate(eventDate: string) {
+    return axios(`${API_URL}/events/${eventDate}/bydate`);
+}
+
 export function fetchDirectors() {
     return axios(`${API_URL}/members/director`);
 }

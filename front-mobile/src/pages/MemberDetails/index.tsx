@@ -1,10 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Alert, Image, StyleSheet, Text, View } from 'react-native';
-import { setAllright, setDelayed } from '../api';
-import { Button } from '../Components/Button';
-import Header from '../Header';
-import { Member } from '../types';
+import { setAllright, setDelayed } from '../../api';
+import { Button } from '../../Components/Button';
+import Header from '../../Components/Header';
+import { Member } from '../../types/types';
 
 type Props = {
     route: {

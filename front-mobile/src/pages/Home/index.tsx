@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import HeaderOff from '../HeaderOff';
+import HeaderOff from '../../Components/HeaderOff';
 
 export default function Home() {
 
@@ -11,14 +11,14 @@ export default function Home() {
     const handleOnPress = () => {
         navigation.navigate('Visitors');
     }
-    
+
     return (
         <>
             <HeaderOff />
             <TouchableWithoutFeedback onPress={handleOnPress}>
-            <View style={styles.container}>
-                <Image source={require('../assets/logo.png')}/>
-            </View>
+                <View style={styles.container}>
+                    <Image source={require('../../assets/logo.png')} />
+                </View>
             </TouchableWithoutFeedback>
         </>
 

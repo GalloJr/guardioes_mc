@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Keyboard, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
 
-import { Button } from '../Components/Button';
-import HeaderOff from '../HeaderOff';
+import { Button } from '../../Components/Button';
+import HeaderOff from '../../Components/HeaderOff';
 import { useNavigation } from '@react-navigation/core';
 
 //https://medium.com/reactbrasil/consumindo-api-rest-com-autentica%C3%A7%C3%A3o-jwt-no-react-native-eec62b852ff3
+//https://github.com/tadeumx1/react-native-api-jwt-tutorial
 
 export default function Login() {
     const [name, setName] = useState<string>();

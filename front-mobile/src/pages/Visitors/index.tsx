@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
-import HeaderOff from '../HeaderOff';
+import HeaderOff from '../../Components/HeaderOff';
 
 export default function Visitors() {
 
@@ -25,7 +25,7 @@ export default function Visitors() {
                         O Guardiões M. C. conta com uma filial em Santa Catarina e uma filial na Bahia alem da sede em São José dos Campos que conta atualmente com 38 membros sendo 8 deles da diretoria e 3 Old Dogs que já são integrantes a mais de 15 anos.
                 </Text>
                     <Text style={styles.title}>Fotos</Text>
-                    <Image source={require('../assets/membros.png')} />
+                    <Image source={require('../../assets/membros.png')} />
                     <Text style={styles.title}>Sede</Text>
                     <Text style={styles.subTitle}>
                         R. Manoel Bôsco Ribeiro, 46 - Jardim das Industrias, São José dos Campos - SP, 12241-070
