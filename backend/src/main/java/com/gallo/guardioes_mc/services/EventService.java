@@ -1,9 +1,11 @@
 package com.gallo.guardioes_mc.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -54,6 +56,13 @@ public class EventService {
 		}
 		event = eventRepository.save(event);
 		return new EventDTO(event);
+	}
+	
+	@Transactional(readOnly = true)
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	public List<EventDTO> findEventDate(LocalDate moment) {
+		List<Event> list = eventRepository.findEventDate(moment);
+		return list.stream().map(x -> new EventDTO(x)).collect(Collectors.toList());
 	}
 	
 	@Transactional

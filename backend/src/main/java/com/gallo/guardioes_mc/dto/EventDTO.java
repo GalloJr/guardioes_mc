@@ -1,11 +1,12 @@
 package com.gallo.guardioes_mc.dto;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.gallo.guardioes_mc.entities.Event;
 import com.gallo.guardioes_mc.entities.EventStatus;
 
@@ -14,7 +15,10 @@ public class EventDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
-	private Instant moment;
+	
+	@JsonFormat(shape= JsonFormat.Shape.STRING,pattern="dd/MM/yyyy")
+	private LocalDate moment;
+	
 	private String description;
 	private String address;
 	private EventStatus status;
@@ -25,7 +29,7 @@ public class EventDTO implements Serializable{
 		
 	}
 
-	public EventDTO(Long id, Instant moment, String description, String address, EventStatus status) {
+	public EventDTO(Long id, LocalDate moment, String description, String address, EventStatus status) {
 		super();
 		this.id = id;
 		this.moment = moment;
@@ -52,11 +56,11 @@ public class EventDTO implements Serializable{
 		this.id = id;
 	}
 
-	public Instant getMoment() {
+	public LocalDate getMoment() {
 		return moment;
 	}
 
-	public void setMoment(Instant moment) {
+	public void setMoment(LocalDate moment) {
 		this.moment = moment;
 	}
 

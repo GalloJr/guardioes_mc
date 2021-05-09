@@ -3,6 +3,7 @@ package com.gallo.guardioes_mc.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.gallo.guardioes_mc.entities.Event;
@@ -15,4 +16,6 @@ public interface EventRepository extends JpaRepository<Event, Long> {
     @Query("SELECT e FROM Event e inner JOIN e.members m WHERE m.rank = ?1")
     List<Event> findEventsWithRank(String rank);
     
+    @Query("SELECT DISTINCT obj FROM Event obj WHERE obj.moment = ?1")
+	List<Event> findEventDate(LocalDate moment);
 }

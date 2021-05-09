@@ -1,7 +1,7 @@
 package com.gallo.guardioes_mc.entities;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,7 +23,7 @@ public class Event implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Instant moment;
+	private LocalDate moment;
 	private String description;
 	private String address;
 	private EventStatus status;
@@ -35,7 +35,7 @@ public class Event implements Serializable {
 	public Event() {
 	}
 
-	public Event(Long id, Instant moment, String description, String address, EventStatus status) {
+	public Event(Long id, LocalDate moment, String description, String address, EventStatus status) {
 		super();
 		this.id = id;
 		this.moment = moment;
@@ -52,11 +52,11 @@ public class Event implements Serializable {
 		this.id = id;
 	}
 
-	public Instant getMoment() {
+	public LocalDate getMoment() {
 		return moment;
 	}
 
-	public void setMoment(Instant moment) {
+	public void setMoment(LocalDate moment) {
 		this.moment = moment;
 	}
 
